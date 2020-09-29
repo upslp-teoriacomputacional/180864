@@ -5,24 +5,19 @@
   <li>Será posible que habiendo diseñado un autómata que sea capaz de reconocer un conjunto de cadenas de un lenguaje, construir un programa que implemente dicho autómata en algún lenguaje de programación, a tal fin el Algoritmo de funcionamiento del programa puede ser obtenido a partir del AFD en forma directa. 
   </li>
   
-
+<p> </p>
 Te evalua expresiones como 1+2.
 <p> </p>
 La matriz de reglas es:
 <p> </p>
-|Estado|Digitos|Operadores|Fin de cadena|
-| :------- | :------: | -----: |:------: | -----: |
-| q0    | q1     | Error     | Error        |
-| q1    | Error  | q2        | Error        |
-| q2    | qf     | Error     | Error        |
-| q0    | Error  | Error     | Aceptacion   |
+
 
 | Estado | Digitos | Operadores | Fin de cadena |
 | --- | ---: | :---: |  :---: |
 | q0 | q1 | Error |  Error |
 | q1 | Error | q2 | Error |
 | q2 | qf | Error | Error |
-| q3 | error | Error | Aceptacion |
+| qf | error | Error | Aceptacion |
 
 </ol>
 En este ejemplo validaremos una expresión aritmética ejemplo 12+3 o tal vez 23*3/5-8+1, sea cual sea la expresión nuestro autómata será capaz de decidir si es o no una expresión aritmética, para ello hay que crear todo desde cero.
