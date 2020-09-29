@@ -21,17 +21,18 @@ La matriz de reglas es:
 En este ejemplo validaremos una expresión aritmética ejemplo 12+3 o tal vez 23*3/5-8+1, sea cual sea la expresión nuestro autómata será capaz de decidir si es o no una expresión aritmética, para ello hay que crear todo desde cero.
 
 ### Paso 1: Es crear nuestro autómata. Para este ejemplo propongo lo siguiente:
-<img src="/images/diagrama.jpg">
+
+![Automata Finito](/img/diagrama.jpg)
 
 Dígito = { + , - , / , * }         Operador = { 0 , 1 , 2  , 3 , 4 , 5 , 6 , 7 , 8 , 9 }
 
 ### Paso 2: Formalmente se define como una tupla (Q, Σ, q0, δ, F) donde:
-<img src="/images/formal.jpg">
+![Definicion formal](/img/formal.jpg)
 
 
 ### Paso 3: Ahora podemos construir nuestra tabla de transiciones:
 
-<img src="/images/transiciones.jpg">
+![Matriz de transiciones](/img/transiciones.jpg)
 
 <p></p>
 
