@@ -6,15 +6,23 @@
   </li>
   
 
-Te evalua expresiones como 1+2 
+Te evalua expresiones como 1+2.
+<p> </p>
 La matriz de reglas es:
-
+<p> </p>
 |Estado|Digitos|Operadores|Fin de cadena|
 | :------- | :------: | -----: |:------: | -----: |
 | q0    | q1     | Error     | Error        |
 | q1    | Error  | q2        | Error        |
 | q2    | qf     | Error     | Error        |
 | q0    | Error  | Error     | Aceptacion   |
+
+| Mes | Facturación | Comercial |
+| --- | ---: | :---: |
+| Enero | 100.000 | Feli |
+| Enero | 200.000 | Fran C. |
+| Febrero | 400.000 | Feli |
+| Febrero | 50.000 | Fran C. |
 
 </ol>
 En este ejemplo validaremos una expresión aritmética ejemplo 12+3 o tal vez 23*3/5-8+1, sea cual sea la expresión nuestro autómata será capaz de decidir si es o no una expresión aritmética, para ello hay que crear todo desde cero.
