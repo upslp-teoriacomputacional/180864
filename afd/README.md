@@ -17,8 +17,8 @@ La matriz de reglas es:
 | q2    | qf     | Error     | Error        |
 | q0    | Error  | Error     | Aceptacion   |
 
-| Mes | Facturación | Comercial |
-| --- | ---: | :---: |
+| Estado | Digitos | Operadores | Fin de cadena |
+| --- | ---: | :---: |  :---: |
 | Enero | 100.000 | Feli |
 | Enero | 200.000 | Fran C. |
 | Febrero | 400.000 | Feli |
