@@ -8,14 +8,14 @@
 
 Te evalua expresiones como 1+2 
 La matriz de reglas es:
-<a>_________________________________________________________________</a>
-<a>|   Estado  |   Digitos     |   Operadores      | Fin de cadena |</a>
-<a>|___________|_______________|___________________|_______________|</a>
-<a>|   q0      |   q1          |   Error           |   Error       |</a>
-<a>|   q1      |   Error       |   q2              |   Error       |</a>
-<a>|   q2      |   qf          |   Error           |   Error       |</a>
-<a>|   q0      |   Error       |   Error           |   Aceptacion  |</a>
-<a>|___________|_______________|___________________|_______________|</a>
+<li>_________________________________________________________________</li>
+<li>|   Estado  |   Digitos     |   Operadores      | Fin de cadena |</li>
+<li>|___________|_______________|___________________|_______________|</li>
+<li>|   q0      |   q1          |   Error           |   Error       |</li>
+<li>|   q1      |   Error       |   q2              |   Error       |</li>
+<li>|   q2      |   qf          |   Error           |   Error       |</li>
+<li>|   q0      |   Error       |   Error           |   Aceptacion  |</li>
+<li>|___________|_______________|___________________|_______________|</li>
  
 </ol>
 En este ejemplo validaremos una expresión aritmética ejemplo 12+3 o tal vez 23*3/5-8+1, sea cual sea la expresión nuestro autómata será capaz de decidir si es o no una expresión aritmética, para ello hay que crear todo desde cero.
