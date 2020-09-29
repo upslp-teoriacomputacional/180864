@@ -19,10 +19,10 @@ La matriz de reglas es:
 
 | Estado | Digitos | Operadores | Fin de cadena |
 | --- | ---: | :---: |  :---: |
-| Enero | 100.000 | Feli |
-| Enero | 200.000 | Fran C. |
-| Febrero | 400.000 | Feli |
-| Febrero | 50.000 | Fran C. |
+| q0 | q1 | Error |  Error |
+| q1 | Error | q2 | Error |
+| q2 | qf | Error | Error |
+| q3 | error | Error | Aceptacion |
 
 </ol>
 En este ejemplo validaremos una expresión aritmética ejemplo 12+3 o tal vez 23*3/5-8+1, sea cual sea la expresión nuestro autómata será capaz de decidir si es o no una expresión aritmética, para ello hay que crear todo desde cero.
