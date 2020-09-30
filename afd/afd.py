@@ -5,6 +5,9 @@
 from sys import exit
 import re
 
+simbolo = None  # variable must exist in global namespace first
+Fin = None  # variable must exist in global namespace first
+
 #Definimos la funcion caracter 
 def caracter(character):
     global simbolo
@@ -61,10 +64,10 @@ for  character in cadena:
     estadosig=estado
     
     #llamamos al metodo para saber si es un caracter valido y el valor retornado se guarda en charcaracter
-    character= caracter(character)
+    charcaracter= caracter(character)
     
     #guardamos en estado el valor obtenido en la tabla segun las cordenadas que recibio anteriormente
-    estado=tabla[estado][character]
+    estado=tabla[estado][charcaracter]
 
   
     #Si el valor obtenido es una E imprimimos cadena no valida
