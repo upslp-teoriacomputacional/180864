@@ -1,92 +1,39 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-#
-from sys import exit
-import re
+#https://www.tutorialspoint.com/python_data_structure/python_graphs.htm#:~:text=A%20graph%20can%20be%20easily,the%20values%20in%20the%20dictionary.
+import sys
+import ast 
 
-simbolo = None  # variable must exist in global namespace first
-Fin = None  # variable must exist in global namespace first
-
-#Definimos la funcion caracter 
-def caracter(character):
-    global simbolo
-    simbolo=""
-    global Fin
-    Fin=""
-    digito="[0-9]"
-    operador="(\+|\-|\*|\/)"
-    
-    #comparamos si es digito o operador
-    if(re.match(digito,character)):
-        simbolo=" Digito "
-        return 0
-    else:
-        if(re.match(operador,character)):
-            simbolo="Operador"
-            return 1
+def main():
+    transition = [[[0,1],[0]], [[4],[2]], [[4],[3]], [[4],[4]]]
+    input = raw_input("enter the string: ")
+    input = list(input) #copy the input in list because python strings are immutable and thus can't be changed directly
+    for index in range(len(input)): #parse the string of a,b in 0,1 for simplicity
+        if input[index]=='a':
+            input[index]='0' 
         else:
-            if(character==Fin):
-                return 2
-        
-        #si no es ni un digito ni un operador entonces es un caracter no validp
-        print("Error el caracter:",character,"no es valido")
-        exit()
+            input[index]='1'
 
-#definimos al la funcion  encabezado
-def encabezado():
-    print("""|  Edo. Actual |Caracter |  Simbolo  |Edo. Siguiente |""")
-    body()
+    final = "3" #set of final states = {3}
+    start = 0
+    i=0  #counter to remember the number of symbols read
 
-#definimos la funcion contenido donde guarda cada valor despues de encontrarlo en un ciclo
-def contenido(estadosig,character,simbolo,estado):
-    print("|     ",estadosig,"      |  ",character,"    |",simbolo," |     ",estado,"       |")
-    body()
+    trans(transition, input, final, start, i)
+    print ("rejected")
 
-#solo muestra la linea que se repetira cada vez que la mandemos a llamar
-def body():
-    print("+--------------+---------+-----------+---------------+")
 
-#MAIN
-#Este es la tabla de transiciones del automata AFD creado
-tabla=[[1,"E","E"],["E",2,"E"],[3,"E","E"],["E","E","A"]]
-estado = 0
 
-print ("""+-------------------------------------+
-|    Ingrese una cadena a evaluar:    |
-+-------------------------------------+""")
-cadena = input()
-body()
-encabezado()
+def trans(transition, input, final, state, i):
+    for j in range (len(input)):
+        for each in transition[state][int(input[j])]: #check for each possibility
+            if each < 4:                              #move further only if you are at non-hypothetical state
+                state = each
+                if j == len(input)-1 and (str(state) in final): #last symbol is read and current state lies in the set of final states
+                    print ("accepted")
+                    sys.exit()
+                trans(transition, input[i+1:], final, state, i) #input string for next transition is input[i+1:]
+        i = i+1 #increment the counter
 
-#ciclo para recorrer la cadena
-for  character in cadena:
-    estadosig=estado
-    
-    #llamamos al metodo para saber si es un caracter valido y el valor retornado se guarda en charcaracter
-    charcaracter= caracter(character)
-    
-    #guardamos en estado el valor obtenido en la tabla segun las cordenadas que recibio anteriormente
-    estado=tabla[estado][charcaracter]
 
-  
-    #Si el valor obtenido es una E imprimimos cadena no valida
-    if (estado=="E"):
-        print("|     ",estadosig,"      |  ",character,"    |",simbolo," |     ",estado,"       |")
-        body()
-        print("""|              Cadena No Valida :(                   |
-+----------------------------------------------------+""")
-        exit()
-    contenido(estadosig,character,simbolo,estado)
-
-#al concluir si el estado no es 3 que es el de aceptacion imprimimos cadena no valida    
-if(estado!=3):
-        print("""|              Cadena No Valida :(                   |
-+----------------------------------------------------+""")
-
-#si el estado es 3 es una cadena de aceptacion
-if(estado==3):
-    print("|     ",estado,"      |         |Fin Cadena |               |")
-    body()
-    print("""|                Cadena Valida                       |
-+----------------------------------------------------+""")
+main()
