@@ -91,13 +91,22 @@ Cuando se ejecuta este fragmento de código, la salida debe ser la siguiente:
 ```
 Vamos a descomponerlo
 1.	Comenzamos con la importación de la biblioteca de expresiones regulares porque será necesario cuando se compruebe si ciertas palabras coinciden con un determinado patrón de expresiones regulares.
+
 2.	Creamos una lista vacía llamada tokens. Esto se utilizará para almacenar todos los tokens que creamos.
+
 3.	Dividimos nuestro código fuente, que es una cadena en una lista de palabras donde cada palabra en la cadena separada por un espacio es un elemento de la lista. Luego los almacenamos en una variable llamada source_code .
+
 4.	Comenzamos a recorrer nuestra lista de source_code palabra por palabra.
+
 5.	Ahora realizamos nuestro primer control:
-6.	if word in ['str', 'int', 'bool']: 
-7.	   tokens.append(['DATATYPE', word])
+
+```python
+	if word in ['str', 'int', 'bool']: 
+	   tokens.append(['DATATYPE', word])
+
+```
 Lo que buscamos aquí es un tipo de datos que nos dirá qué tipo de variable será nuestra variable.
+
 8.	Después de eso, realizamos más verificaciones como la anterior, identificando cada palabra en nuestro código fuente y creando un token para ella. Estos tokens se pasarán al analizador para crear un árbol de sintaxis abstracta (AST).
 
 
