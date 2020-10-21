@@ -2,7 +2,7 @@
 """
 Created on Tue Oct 20 19:44:24 2020
 
-@author: el_racional
+@author: jc-gi
 """
 
 
