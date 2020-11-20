@@ -1,7 +1,7 @@
-import re                                 # for performing regex expressions
+import re                                 # for performing regular expressions
 
 tokens = []                               # for string tokens
-source_code = 'int result = 1;'00.split() # turning source code into list of words
+source_code = 'int result = 1;'.split() # turning source code into list of words
 
 # Loop through each source code word
 for word in source_code:
