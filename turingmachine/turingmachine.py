@@ -98,21 +98,43 @@ turing_M (state = 'p', #estado inicial de la maquina de turing
 
 
 print("Maquina de turing Incremento")
-turing_M (state = 's1', #estado inicial de la maquina de turing
+turing_M (state = 'q0', #estado inicial de la maquina de turing
               blank = 'b', #simbolo blanco de el alfabeto dela cinta
-              tape = list("111"),#inserta los elementos en la cinta
-              final = 's6',  #estado valido y/o final
+              tape = list("11111111x111111111111111111111111111111111111="),#inserta los elementos en la cinta
+              final = 'q9',  #estado valido y/o final
               rules = map(tuple,#reglas de transicion
                           [
-                          "s1 1 b right s2".split(),
-                          "s2 1 1 right s2".split(),
-                          "s2 b b right s3".split(),
-                          "s3 1 1 right s3".split(),
-                          "s3 b 1 left s4".split(),
-                          "s4 1 1 left s4".split(),
-                          "s4 b b left s5".split(),
-                          "s5 1 1 left s5".split(),
-                          "s5 b 1 right s6".split(),
+                          "q0 1 1 right q0".split(),
+                          "q0 x x right q0".split(),
+                          "q0 = = left q1".split(),
+                          "q1 1 Y left q2".split(),
+                          "q1 x x right q8".split(),
+                          "q2 1 1 left q2".split(),
+                          "q2 x x left q2".split(),
+                          "q2 Z Z left q2".split(),
+                          "q2 b b right q3".split(),
+                          "q3 Z Z right q3".split(),
+                          "q3 1 Z right q4".split(),
+                          "q3 x x left q6".split(),
+                          "q4 1 1 right q4".split(),
+                          "q4 x x right q4".split(),
+                          "q4 Y Y right q4".split(),
+                          "q4 = = right q4".split(),
+                          "q4 b 1 left q5".split(),
+                          "q5 = = left q5".split(),
+                          "q5 Y Y left q5".split(),
+                          "q5 1 1 left q5".split(),
+                          "q5 x x left q5".split(),
+                          "q5 Z Z left q2".split(),
+                          "q6 Z 1 left q6".split(),
+                          "q6 b b right q7".split(),
+                          "q7 x x right q7".split(),
+                          "q7 1 1 right q7".split(),
+                          "q7 Y Y left q1".split(),
+                          "q8 = = right q5".split(),
+                          "q8 1 1 right q5".split(),
+                          "q8 Y 1 right q5".split(),
+                          "q8 b b right q9".split(),
                           ]   
                          )
              )  
