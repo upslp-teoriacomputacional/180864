@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 """
 Created on Mon Feb 15 16:24:25 2021
-This program validate chars to alphabet {a-z, A-Z} and digits {0-9} 
+This program validate chars to alphabet {a-z} and digits {0-9}
+No validate Upper Case and special characters blank spaces
 @author: jc-gi
 """
-import re
+import re #Regular expression 
 def special_match(strg, search=re.compile(r'[^a-z0-9.]').search):
     return not bool(search(strg))
 
